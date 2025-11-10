@@ -1,0 +1,5 @@
+# SQL query for DP03:
+SELECT * FROM `carto-data.ac_k14py5d9.carto_usa_acs_demographics_dp3economic_usa_censustract_2023_5year_2023`
+
+# SQL query for DP05:
+SELECT * FROM `carto-data.ac_k14py5d9.carto_usa_acs_demographics_dp5demographic_usa_censustract_2023_5year_2023`

@@ -16,3 +16,9 @@ Resources:
 1. https://clausa.app.carto.com/public/catalog/dataset/acs_dp3economic_5587b4d2 (Selected Economic Characteristics, 5 years estimates - United States of America)
 
 2. https://clausa.app.carto.com/public/catalog/dataset/acs_dp5demograp_87f2e206 (ACS Demographic and Housing Estimates, 5 years estimates)
+---
+
+# Setup
+1. Create venv
+2. pip install -r requirements.txt
+3. make sure gcloud account is authenticated
