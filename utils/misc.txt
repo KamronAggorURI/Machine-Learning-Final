@@ -16,3 +16,31 @@ Bureau's website. Rhode Island's state code is 44. However, you can filter even 
 than this using county codes. For instance, the county code for Providence is 007, so the GEOID for 
 data in Providence will always take the form '44007XXXXXX'. This is important info to take into 
 account when querying information, as we need to filter by Rhode Island level results and lower.
+e.g. 
+SELECT *
+FROM ...
+WHERE geo_id LIKE '44%' -- RI
+
+SELECT *
+FROM ...
+WHERE geo_id LIKE '44007%' -- Providence, RI
+
+ABOUT SENTINEL CODES
+Code -666666666:	Estimate suppressed; The data didn’t meet reliability or disclosure thresholds (too few sample responses).
+Code -999999999:	Missing / Not applicable;	No estimate available for this geography or variable.
+Code -222222222:	Median cannot be computed;	The variable had too few samples to calculate a median (common for rent or income in sparsely populated tracts).
+Code -333333333:	Margin of error unavailable	MOE not calculated
+Code -555555555:	Low reliability	Estimate failed quality checks
+
+These will only serve to skew our data! Filter them out:
+Python:
+import numpy as np
+
+sentinel_values = [-666666666, -66666666, -999999999, -222222222, -333333333, -555555555]
+df.replace(sentinel_values, np.nan, inplace=True)
+
+SQL:
+CASE
+  WHEN percent_income_spent_on_rent < 0 THEN NULL
+  ELSE percent_income_spent_on_rent
+END AS percent_income_spent_on_rent
