@@ -3,3 +3,15 @@ SELECT * FROM `carto-data.ac_k14py5d9.carto_usa_acs_demographics_dp3economic_usa
 
 # SQL query for DP05:
 SELECT * FROM `carto-data.ac_k14py5d9.carto_usa_acs_demographics_dp5demographic_usa_censustract_2023_5year_2023`
+
+
+ABOUT GEOSPATIAL HIERARCHY
+The unique key that will allow us to join tables is the GEOID - geographic identifier. These are numerical
+codes used by the Census Burea to uniquely identify geographic areas like states, counties, and most 
+importantly, census tracts. 
+
+For example, the 11-character tract GEOID is a recommended identifier that combines the 
+state and county FIPS codes with a tract code (SSCCCTTTTTT). You can find these IDs on the Census 
+Bureau's website. Rhode Island's state code is 44, and the FIPS code is 007, so the GEOID will
+ALWAYS start with that - this is important info to take into account when querying information, 
+as we need to filter by Rhode Island results.
