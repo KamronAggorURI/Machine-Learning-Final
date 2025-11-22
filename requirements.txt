@@ -11,3 +11,5 @@ shapely
 folium
 google-cloud
 google-auth
+dotenv
+db-dtypes
