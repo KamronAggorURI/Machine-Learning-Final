@@ -13,3 +13,4 @@ google-cloud
 google-auth
 dotenv
 db-dtypes
+google-cloud-bigquery-storage
