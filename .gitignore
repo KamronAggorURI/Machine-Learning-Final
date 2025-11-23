@@ -213,4 +213,5 @@ __marimo__/
 # Google Cloud service account credentials
 credentials/*.json
 
-.vscode/*.json
+.vscode/*.json*.json
+*.pem
