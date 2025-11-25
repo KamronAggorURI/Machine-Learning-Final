@@ -216,4 +216,5 @@ credentials/*.json
 .vscode/*.json*.json
 *.pem
 # exec ignore
+exec/
 exec.d/
